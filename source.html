@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Тег meta для указания кодировки -->
+    <meta charset="utf-8">
+    <style>
+        canvas {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+<script src = "class.js" async></script>
+<table>
+    <tr>
+        <td>
+            Выберите цвет: <input type="color" id = "color">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Тип кисти: <select id = "type">
+            <option value = "square">Квадрат</option>
+            <option value = "empty_square">Контур квадрата</option>
+            <option value = "circle">Круг</option>
+            <option value = "empty_circle">Контур круга</option>
+            <option value="star">Звезда</option>
+        </select>
+        </td>
+        <td>
+            Размер кисти: <input type="number" id = "size" min = "1" value = "10">
+        </td>
+    </tr>
+    <tr><td>Рисуйте:</td></tr>
+    <tr>
+        <td colspan="3">
+            <canvas id = "field" width="500" height="400" style="border: dotted 1px"></canvas>
+        </td>
+    </tr>
+    <tr>
+        <td>Фильтр:
+            <select id = "type_filter">
+                <option value = "black_white">Черно-белый</option>
+                <option value = "negative">Негатив</option>
+            </select>
+        </td>
+        <td><button onclick="make_filter()">Применить фильтр</button></td>
+    </tr>
+    <tr>
+        <td><input id = "clear" value = "Очистить" type = "button" /></td>
+    </tr>
+    <tr>
+        <td>Введите имя файла:</td>
+        <td><input id="inputFileNameToSaveAs" value = "paint"></input></td>
+        <td><button onclick="saveTextAsFile()">Сохранить файл</button></td>
+    </tr>
+    <tr>
+        <td>Выберите файл для загрузки:</td>
+        <td><input type="file" id="fileToLoad"></td>
+        <td><button onclick="loadFileAsText()">Загрузить файл</button><td>
+    </tr>
+</table>
+
+</body>
+
+</html>
